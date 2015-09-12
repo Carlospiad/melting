@@ -1,6 +1,49 @@
 %h1 Editing gold_report
 
-= render 'form'
+-# = render 'form'
+
+= form_for @gold_report do |f|
+  - if @gold_report.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@gold_report.errors.count, "error")} prohibited this gold_report from being saved:"
+      %ul
+        - @gold_report.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :end_date
+    = f.date_select :end_date
+  .field
+    = f.label :branch_id, "Sucursal"
+    - opts = options_from_collection_for_select(Branch.all.order(:code), :id, :namecode,:id)
+    = f.select :branch_id, opts, {:include_blank => true}
+  .field
+    = f.label :assistants
+    = f.text_field :assistants
+
+  .field
+    = f.label :pawned_capital
+    = f.number_field :pawned_capital
+  .field
+    = f.label :bought_capital
+    = f.number_field :bought_capital
+  .field
+    = f.label :container_qty
+    = f.number_field :container_qty
+  %button.btn.btn-primary.btn-md{"data-target" => "#empenosModal", "data-toggle" => "modal", :type => "button"}
+    Modificar de Empeños
+  %button.btn.btn-primary.btn-md{"data-target" => "#comprasModal", "data-toggle" => "modal", :type => "button"}
+    Modificar de Compras
+  .field
+    = f.label :comments
+    = f.text_area :comments
+  .actions
+    = f.submit 'Save'
+
+
+
+= render 'form_pawn_gold'
+= render 'form_bought_gold'
 
 = link_to 'Show', @gold_report
 \|

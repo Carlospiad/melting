@@ -1,0 +1,54 @@
+/ Modal
+#comprasModal.modal.fade{"aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
+  .modal-dialog{:role => "document"}
+    .modal-content
+      .modal-header
+        %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
+          %span{"aria-hidden" => "true"} &times;
+        %h4#myModalLabel.modal-title Empeños de Sucursal
+      .modal-body
+        = form_for @gold_report do |f|
+          - if @gold_report.errors.any?
+            #error_explanation
+              %h2= "#{pluralize(@gold_report.errors.count, "error")} prohibited this gold_report from being saved:"
+              %ul
+                - @gold_report.errors.full_messages.each do |msg|
+                  %li= msg
+          .field
+            = f.label :bought_capital
+            = f.number_field :bought_capital
+          .field
+            = f.label :container_qty
+            = f.number_field :container_qty
+          .field
+            = f.label :export_real_weight
+            = f.number_field :export_real_weight
+          .field
+            = f.label :pawns_listed_total_weight
+            = f.number_field :pawns_listed_total_weight
+          .field
+            = f.label :pawns_10k_weight
+            = f.number_field :pawns_10k_weight
+          .field
+            = f.label :pawns_14k_weight
+            = f.number_field :pawns_14k_weight
+          .field
+            = f.label :pawns_18k_weight
+            = f.number_field :pawns_18k_weight
+          .field
+            = f.label :pawns_with_diamonds_weight
+            = f.number_field :pawns_with_diamonds_weight
+          .field
+            = f.label :pawns_saved_weight
+            = f.number_field :pawns_saved_weight
+          .field
+            = f.label :pawns_stone_weight
+            = f.number_field :pawns_stone_weight
+          .field
+            = f.label :pawns_other_weight
+            = f.number_field :pawns_other_weight
+          .actions
+            = f.submit 'Save'
+      .modal-footer
+        %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"} Close
+        %button.btn.btn-primary{:type => "button"} Save changes
