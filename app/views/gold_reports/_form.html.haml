@@ -1,0 +1,86 @@
+= form_for @gold_report do |f|
+  - if @gold_report.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@gold_report.errors.count, "error")} prohibited this gold_report from being saved:"
+      %ul
+        - @gold_report.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :end_date
+    = f.date_select :end_date
+  .field
+    = f.label :branch_id, "Sucursal"
+    - opts = options_from_collection_for_select(Branch.all.order(:code), :id, :namecode)
+    = f.select :branch_id, opts, {:include_blank => true}
+  .field
+    = f.label :branch
+    = f.text_field :branch
+  .field
+    = f.label :assistants
+    = f.text_field :assistants
+  .field
+    = f.label :pawned_capital
+    = f.number_field :pawned_capital
+  .field
+    = f.label :bought_capital
+    = f.number_field :bought_capital
+  .field
+    = f.label :export_real_weight
+    = f.number_field :export_real_weight
+  .field
+    = f.label :container_qty
+    = f.number_field :container_qty
+  .field
+    = f.label :pawns_listed_total_weight
+    = f.number_field :pawns_listed_total_weight
+  .field
+    = f.label :pawns_10k_weight
+    = f.number_field :pawns_10k_weight
+  .field
+    = f.label :pawns_14k_weight
+    = f.number_field :pawns_14k_weight
+  .field
+    = f.label :pawns_18k_weight
+    = f.number_field :pawns_18k_weight
+  .field
+    = f.label :pawns_with_diamonds_weight
+    = f.number_field :pawns_with_diamonds_weight
+  .field
+    = f.label :pawns_saved_weight
+    = f.number_field :pawns_saved_weight
+  .field
+    = f.label :pawns_stone_weight
+    = f.number_field :pawns_stone_weight
+  .field
+    = f.label :pawns_other_weight
+    = f.number_field :pawns_other_weight
+  .field
+    = f.label :bought_listed_total_weight
+    = f.number_field :bought_listed_total_weight
+  .field
+    = f.label :bought_10k_weight
+    = f.number_field :bought_10k_weight
+  .field
+    = f.label :bought_14k_weight
+    = f.number_field :bought_14k_weight
+  .field
+    = f.label :bought_18k_weight
+    = f.number_field :bought_18k_weight
+  .field
+    = f.label :bought_with_diamonds_weight
+    = f.number_field :bought_with_diamonds_weight
+  .field
+    = f.label :bought_saved_weight
+    = f.number_field :bought_saved_weight
+  .field
+    = f.label :bought_stone_weight
+    = f.number_field :bought_stone_weight
+  .field
+    = f.label :bought_other_weigth
+    = f.number_field :bought_other_weigth
+  .field
+    = f.label :comments
+    = f.text_area :comments
+  .actions
+    = f.submit 'Save'

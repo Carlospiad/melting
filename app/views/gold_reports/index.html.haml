@@ -1,0 +1,67 @@
+%h1 Listing gold_reports
+
+%table
+  %thead
+    %tr
+      %th End date
+      %th Branch
+      %th Assistants
+      %th Pawned capital
+      %th Bought capital
+      %th Export real weight
+      %th Container qty
+      %th Pawns listed total weight
+      %th Pawns 10k weight
+      %th Pawns 14k weight
+      %th Pawns 18k weight
+      %th Pawns with diamonds weight
+      %th Pawns saved weight
+      %th Pawns stone weight
+      %th Pawns other weight
+      %th Bought listed total weight
+      %th Bought 10k weight
+      %th Bought 14k weight
+      %th Bought 18k weight
+      %th Bought with diamonds weight
+      %th Bought saved weight
+      %th Bought stone weight
+      %th Bought other weigth
+      %th Comments
+      %th
+      %th
+      %th
+
+  %tbody
+    - @gold_reports.each do |gold_report|
+      %tr
+        %td= gold_report.end_date
+        %td= gold_report.branch.code + gold_report.branch.name
+        %td= gold_report.assistants
+        %td= gold_report.pawned_capital
+        %td= gold_report.bought_capital
+        %td= gold_report.export_real_weight
+        %td= gold_report.container_qty
+        %td= gold_report.pawns_listed_total_weight
+        %td= gold_report.pawns_10k_weight
+        %td= gold_report.pawns_14k_weight
+        %td= gold_report.pawns_18k_weight
+        %td= gold_report.pawns_with_diamonds_weight
+        %td= gold_report.pawns_saved_weight
+        %td= gold_report.pawns_stone_weight
+        %td= gold_report.pawns_other_weight
+        %td= gold_report.bought_listed_total_weight
+        %td= gold_report.bought_10k_weight
+        %td= gold_report.bought_14k_weight
+        %td= gold_report.bought_18k_weight
+        %td= gold_report.bought_with_diamonds_weight
+        %td= gold_report.bought_saved_weight
+        %td= gold_report.bought_stone_weight
+        %td= gold_report.bought_other_weigth
+        %td= gold_report.comments
+        %td= link_to 'Show', gold_report
+        %td= link_to 'Edit', edit_gold_report_path(gold_report)
+        %td= link_to 'Destroy', gold_report, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Gold report', new_gold_report_path

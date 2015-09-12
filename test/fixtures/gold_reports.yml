@@ -1,0 +1,53 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  end_date: 2015-09-08
+  branch_id: 
+  assistants_id: 
+  pawned_capital: 1
+  bought_capital: 1
+  export_real_weight: 1
+  container_qty: 1
+  pawns_listed_total_weight: 1
+  pawns_10k_weight: 1
+  pawns_14k_weight: 1
+  pawns_18k_weight: 1
+  pawns_with_diamonds_weight: 1
+  pawns_saved_weight: 1
+  pawns_stone_weight: 1
+  pawns_other_weight: 1
+  bought_listed_total_weight: 1
+  bought_10k_weight: 1
+  bought_14k_weight: 1
+  bought_18k_weight: 1
+  bought_with_diamonds_weight: 1
+  bought_saved_weight: 1
+  bought_stone_weight: 1
+  bought_other_weigth: 1
+  comments: MyText
+
+two:
+  end_date: 2015-09-08
+  branch_id: 
+  assistants_id: 
+  pawned_capital: 1
+  bought_capital: 1
+  export_real_weight: 1
+  container_qty: 1
+  pawns_listed_total_weight: 1
+  pawns_10k_weight: 1
+  pawns_14k_weight: 1
+  pawns_18k_weight: 1
+  pawns_with_diamonds_weight: 1
+  pawns_saved_weight: 1
+  pawns_stone_weight: 1
+  pawns_other_weight: 1
+  bought_listed_total_weight: 1
+  bought_10k_weight: 1
+  bought_14k_weight: 1
+  bought_18k_weight: 1
+  bought_with_diamonds_weight: 1
+  bought_saved_weight: 1
+  bought_stone_weight: 1
+  bought_other_weigth: 1
+  comments: MyText

@@ -1,0 +1,78 @@
+%p#notice= notice
+
+%p
+  %b End date:
+  = @gold_report.end_date
+%p
+  %b Branch:
+  = @gold_report.branch.code + '  ' +@gold_report.branch.name
+%p
+  %b Assistants:
+  = @gold_report.assistants
+%p
+  %b Pawned capital:
+  = @gold_report.pawned_capital
+%p
+  %b Bought capital:
+  = @gold_report.bought_capital
+%p
+  %b Export real weight:
+  = @gold_report.export_real_weight
+%p
+  %b Container qty:
+  = @gold_report.container_qty
+%p
+  %b Pawns listed total weight:
+  = @gold_report.pawns_listed_total_weight
+%p
+  %b Pawns 10k weight:
+  = @gold_report.pawns_10k_weight
+%p
+  %b Pawns 14k weight:
+  = @gold_report.pawns_14k_weight
+%p
+  %b Pawns 18k weight:
+  = @gold_report.pawns_18k_weight
+%p
+  %b Pawns with diamonds weight:
+  = @gold_report.pawns_with_diamonds_weight
+%p
+  %b Pawns saved weight:
+  = @gold_report.pawns_saved_weight
+%p
+  %b Pawns stone weight:
+  = @gold_report.pawns_stone_weight
+%p
+  %b Pawns other weight:
+  = @gold_report.pawns_other_weight
+%p
+  %b Bought listed total weight:
+  = @gold_report.bought_listed_total_weight
+%p
+  %b Bought 10k weight:
+  = @gold_report.bought_10k_weight
+%p
+  %b Bought 14k weight:
+  = @gold_report.bought_14k_weight
+%p
+  %b Bought 18k weight:
+  = @gold_report.bought_18k_weight
+%p
+  %b Bought with diamonds weight:
+  = @gold_report.bought_with_diamonds_weight
+%p
+  %b Bought saved weight:
+  = @gold_report.bought_saved_weight
+%p
+  %b Bought stone weight:
+  = @gold_report.bought_stone_weight
+%p
+  %b Bought other weigth:
+  = @gold_report.bought_other_weigth
+%p
+  %b Comments:
+  = @gold_report.comments
+
+= link_to 'Edit', edit_gold_report_path(@gold_report)
+\|
+= link_to 'Back', gold_reports_path

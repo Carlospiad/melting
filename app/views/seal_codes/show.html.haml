@@ -1,0 +1,30 @@
+%p#notice= notice
+
+%p
+  %b From branch:
+  = @seal_code.from_branch
+%p
+  %b To branch:
+  = @seal_code.to_branch
+%p
+  %b Date:
+  = @seal_code.date
+%p
+  %b Barcode:
+  = @seal_code.barcode
+%p
+  %b Received by:
+  = @seal_code.received_by
+%p
+  %b Supposely contains:
+  = @seal_code.supposely_contains
+%p
+  %b Goldreport:
+  = @seal_code.goldreport
+%p
+  %b Silverreport:
+  = @seal_code.silverreport
+
+= link_to 'Edit', edit_seal_code_path(@seal_code)
+\|
+= link_to 'Back', seal_codes_path
