@@ -7,11 +7,13 @@
           %li= msg
 
   .field
-    = f.label :from_branch
-    = f.number_field :from_branch
+    = f.label :from_branch, "Enviado desde"
+    - opts = options_from_collection_for_select(Branch.all.order(:code), :id, :namecode)
+    = f.select :from_branch, opts, {:include_blank => true}
   .field
-    = f.label :to_branch
-    = f.number_field :to_branch
+    = f.label :to_branch, "Recibido en"
+    - opts = options_from_collection_for_select(Branch.all.order(:code), :id, :namecode)
+    = f.select :to_branch, opts, {:include_blank => true}
   .field
     = f.label :date
     = f.datetime_select :date
