@@ -1,6 +1,6 @@
 %h1 Listing seal_codes
 
-%table.table.table-striped
+%table
   %thead
     %tr
       %th From branch
@@ -10,7 +10,6 @@
       %th Received by
       %th Supposely contains
       %th Goldreport
-      %th Silverreport
       %th
       %th
       %th
@@ -25,7 +24,6 @@
         %td= seal_code.received_by
         %td= seal_code.supposely_contains
         %td= seal_code.goldreport
-        %td= seal_code.silverreport
         %td= link_to 'Show', seal_code
         %td= link_to 'Edit', edit_seal_code_path(seal_code)
         %td= link_to 'Destroy', seal_code, :method => :delete, :data => { :confirm => 'Are you sure?' }

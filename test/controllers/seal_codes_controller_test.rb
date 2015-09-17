@@ -18,7 +18,7 @@ class SealCodesControllerTest < ActionController::TestCase
 
   test "should create seal_code" do
     assert_difference('SealCode.count') do
-      post :create, seal_code: { barcode: @seal_code.barcode, date: @seal_code.date, from_branch_id: @seal_code.from_branch_id, goldreport_id: @seal_code.goldreport_id, received_by: @seal_code.received_by, silverreport_id: @seal_code.silverreport_id, supposely_contains: @seal_code.supposely_contains, to_branch_id: @seal_code.to_branch_id }
+      post :create, seal_code: { barcode: @seal_code.barcode, date: @seal_code.date, from_branch: @seal_code.from_branch, goldreport_id: @seal_code.goldreport_id, received_by: @seal_code.received_by, supposely_contains: @seal_code.supposely_contains, to_branch: @seal_code.to_branch }
     end
 
     assert_redirected_to seal_code_path(assigns(:seal_code))
@@ -35,7 +35,7 @@ class SealCodesControllerTest < ActionController::TestCase
   end
 
   test "should update seal_code" do
-    patch :update, id: @seal_code, seal_code: { barcode: @seal_code.barcode, date: @seal_code.date, from_branch_id: @seal_code.from_branch_id, goldreport_id: @seal_code.goldreport_id, received_by: @seal_code.received_by, silverreport_id: @seal_code.silverreport_id, supposely_contains: @seal_code.supposely_contains, to_branch_id: @seal_code.to_branch_id }
+    patch :update, id: @seal_code, seal_code: { barcode: @seal_code.barcode, date: @seal_code.date, from_branch: @seal_code.from_branch, goldreport_id: @seal_code.goldreport_id, received_by: @seal_code.received_by, supposely_contains: @seal_code.supposely_contains, to_branch: @seal_code.to_branch }
     assert_redirected_to seal_code_path(assigns(:seal_code))
   end
 

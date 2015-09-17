@@ -8,10 +8,10 @@
 
   .field
     = f.label :from_branch
-    = f.text_field :from_branch
+    = f.number_field :from_branch
   .field
     = f.label :to_branch
-    = f.text_field :to_branch
+    = f.number_field :to_branch
   .field
     = f.label :date
     = f.datetime_select :date
@@ -27,8 +27,5 @@
   .field
     = f.label :goldreport
     = f.text_field :goldreport
-  .field
-    = f.label :silverreport
-    = f.text_field :silverreport
   .actions
     = f.submit 'Save'

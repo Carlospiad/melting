@@ -1,17 +1,16 @@
 class CreateSealCodes < ActiveRecord::Migration
   def change
     create_table :seal_codes do |t|
-      t.references :from_branch, index: true
-      t.references :to_branch, index: true
+      t.integer :from_branch
+      t.integer :to_branch
       t.datetime :date
       t.string :barcode
       t.string :received_by
       t.integer :supposely_contains
-      t.references :goldreport, index: true
-      t.references :silverreport, index: true
+      t.references :gold_report, index: true
 
       t.timestamps null: false
     end
-
+    add_foreign_key :seal_codes, :gold_reports
   end
 end

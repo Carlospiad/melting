@@ -24,14 +24,11 @@ class CreateGoldReports < ActiveRecord::Migration
       t.integer :bought_saved_weight
       t.integer :bought_stone_weight
       t.integer :bought_other_weigth
+      t.string :aasm_state
       t.text :comments
 
       t.timestamps null: false
     end
     add_foreign_key :gold_reports, :branches
-    add_foreign_key :seal_codes, :from_branches
-    add_foreign_key :seal_codes, :to_branches
-    add_foreign_key :seal_codes, :goldreports
-    add_foreign_key :seal_codes, :silverreports
   end
 end

@@ -1,21 +1,19 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  from_branch_id: 
-  to_branch_id: 
-  date: 2015-09-08 15:18:28
+  from_branch: 1
+  to_branch: 1
+  date: 2015-09-16 20:02:12
   barcode: MyString
   received_by: MyString
   supposely_contains: 1
   goldreport_id: 
-  silverreport_id: 
 
 two:
-  from_branch_id: 
-  to_branch_id: 
-  date: 2015-09-08 15:18:28
+  from_branch: 1
+  to_branch: 1
+  date: 2015-09-16 20:02:12
   barcode: MyString
   received_by: MyString
   supposely_contains: 1
   goldreport_id: 
-  silverreport_id: 

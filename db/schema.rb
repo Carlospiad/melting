@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150908202600) do
+ActiveRecord::Schema.define(version: 20150917010212) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(version: 20150908202600) do
     t.integer  "bought_saved_weight"
     t.integer  "bought_stone_weight"
     t.integer  "bought_other_weigth"
+    t.string   "aasm_state"
     t.text     "comments"
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
@@ -56,22 +57,18 @@ ActiveRecord::Schema.define(version: 20150908202600) do
   add_index "gold_reports", ["branch_id"], name: "index_gold_reports_on_branch_id", using: :btree
 
   create_table "seal_codes", force: :cascade do |t|
-    t.integer  "from_branch_id"
-    t.integer  "to_branch_id"
+    t.integer  "from_branch"
+    t.integer  "to_branch"
     t.datetime "date"
     t.string   "barcode"
     t.string   "received_by"
     t.integer  "supposely_contains"
-    t.integer  "goldreport_id"
-    t.integer  "silverreport_id"
+    t.integer  "gold_report_id"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
   end
 
-  add_index "seal_codes", ["from_branch_id"], name: "index_seal_codes_on_from_branch_id", using: :btree
-  add_index "seal_codes", ["goldreport_id"], name: "index_seal_codes_on_goldreport_id", using: :btree
-  add_index "seal_codes", ["silverreport_id"], name: "index_seal_codes_on_silverreport_id", using: :btree
-  add_index "seal_codes", ["to_branch_id"], name: "index_seal_codes_on_to_branch_id", using: :btree
+  add_index "seal_codes", ["gold_report_id"], name: "index_seal_codes_on_gold_report_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -109,4 +106,5 @@ ActiveRecord::Schema.define(version: 20150908202600) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   add_foreign_key "gold_reports", "branches"
+  add_foreign_key "seal_codes", "gold_reports"
 end
