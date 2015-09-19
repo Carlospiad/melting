@@ -1,16 +1,15 @@
-%h1 Listing gold_reports
+%h1 Reportes de Oro
 
 %table.table.table-striped
   %thead
     %tr
-      %th End date
-      %th Branch
-      %th Assistants
-      %th Pawned capital
-      %th Bought capital
-      %th Export real weight
-      %th Container qty
-      %th State
+      %th ID
+      %th Fecha
+      %th Sucursal
+      %th Capital Empeñado
+      %th Capital Comprado
+      %th Peso Exportado (g)
+      %th Estado
       %th
       %th
       %th
@@ -18,13 +17,12 @@
   %tbody
     - @gold_reports.each do |gold_report|
       %tr
+        %td= gold_report.id
         %td= gold_report.end_date
         %td= gold_report.branch.name if gold_report.branch_id?
-        %td= gold_report.assistants
         %td= gold_report.pawned_capital
         %td= gold_report.bought_capital
         %td= gold_report.export_real_weight
-        %td= gold_report.container_qty
         %td= gold_report.aasm_state
         %td= link_to 'Show', gold_report
         %td= link_to 'Edit', edit_gold_report_path(gold_report)
