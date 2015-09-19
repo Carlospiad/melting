@@ -15,7 +15,8 @@
     = f.date_select :end_date
   .field
     = f.label :branch_id, "Sucursal"
-    - opts = options_from_collection_for_select(Branch.all.order(:code), :id, :namecode,:id)
+    - preselected_value =  @gold_report.branch_id
+    - opts = options_from_collection_for_select(Branch.all.order(:code), :id, :namecode, preselected_value)
     = f.select :branch_id, opts, {:include_blank => true}
   .field
     = f.label :assistants
