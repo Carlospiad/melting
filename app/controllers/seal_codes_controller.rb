@@ -68,7 +68,6 @@ class SealCodesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_seal_code
       @seal_code = SealCode.find(params[:id])
-      @branch = Branch.find(params[:id])
 
 
     end

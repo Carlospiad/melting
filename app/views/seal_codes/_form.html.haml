@@ -14,7 +14,7 @@
   .field
     = f.label :to_branch, "Recibido en"
     - preselected_value = (@seal_code.to_branch.present?) ? @seal_code.to_branch : nil
-    - opts = options_from_collection_for_select(Branch.all.order(:code), :id, :namecode)
+    - opts = options_from_collection_for_select(Branch.all.order(:code), :id, :namecode, preselected_value)
     = f.select :to_branch, opts, {:include_blank => true}
   .field
     = f.label :date
