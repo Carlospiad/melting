@@ -88,6 +88,6 @@ class GoldReportsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def gold_report_params
-      params.require(:gold_report).permit(:end_date, :branch_id, :assistants_id, :pawned_capital, :bought_capital, :export_real_weight, :container_qty, :pawns_listed_total_weight, :pawns_10k_weight, :pawns_14k_weight, :pawns_18k_weight, :pawns_with_diamonds_weight, :pawns_saved_weight, :pawns_stone_weight, :pawns_other_weight, :bought_listed_total_weight, :bought_10k_weight, :bought_14k_weight, :bought_18k_weight, :bought_with_diamonds_weight, :bought_saved_weight, :bought_stone_weight, :bought_other_weight, :comments)
+      params.require(:gold_report).permit(:end_date, :branch_id, :assistants_id, :pawned_capital, :bought_capital, :export_real_weight, :container_qty, :pawns_listed_total_weight, :pawns_10k_weight, :pawns_14k_weight, :pawns_18k_weight, :pawns_with_diamonds_weight, :pawns_saved_weight, :pawns_stone_weight, :pawns_other_weight, :bought_listed_total_weight, :bought_10k_weight, :bought_14k_weight, :bought_18k_weight, :bought_with_diamonds_weight, :bought_saved_weight, :bought_stone_weight, :bought_other_weight, :comments, :ayudantes, :seal_code_ids => [])
     end
 end

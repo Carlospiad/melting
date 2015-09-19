@@ -3,7 +3,7 @@ class CreateGoldReports < ActiveRecord::Migration
     create_table :gold_reports do |t|
       t.date :end_date
       t.references :branch, index: true
-      t.string :assistants
+      t.text :ayudantes
       t.integer :pawned_capital
       t.integer :bought_capital
       t.integer :export_real_weight

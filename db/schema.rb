@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 20150917010212) do
   create_table "gold_reports", force: :cascade do |t|
     t.date     "end_date"
     t.integer  "branch_id"
-    t.string   "assistants"
+    t.text     "ayudantes"
     t.integer  "pawned_capital"
     t.integer  "bought_capital"
     t.integer  "export_real_weight"

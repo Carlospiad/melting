@@ -21,8 +21,12 @@
           = f.label :container_qty
           = f.text_field :container_qty, class: 'form-control'
         .form-group.col-md-4
-          = f.label :assistants
-          = f.text_area :assistants, class: 'form-control'
+          = f.label :ayudantes
+          = f.text_area :ayudantes, class: 'form-control'
+        .form-group.col-md-4
+          = f.label :seal_codes
+          - opts = options_from_collection_for_select(SealCode.all.order(:barcode), :id, :barcode)
+          = f.select :seal_code_ids, opts, {:include_blank => true} ,{multiple: true, placeholder: 'Seleccione ', class: 'form-control'}
   .panel.panel-default
     .panel-heading
       %h3 Información de Listados

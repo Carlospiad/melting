@@ -11,7 +11,10 @@
       = @gold_report.branch.name if @gold_report.branch_id?
     %p
       %b Assistants:
-      = @gold_report.assistants
+      = @gold_report.ayudantes
+    %p
+      %b Seal Codes:
+      = @gold_report.seal_codes.map{|e| e.barcode}.join('/')
 .panel.panel-default
   .panel-heading
     %h3 Información de Listados
