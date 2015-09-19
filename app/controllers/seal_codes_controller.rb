@@ -5,11 +5,13 @@ class SealCodesController < ApplicationController
   # GET /seal_codes.json
   def index
     @seal_codes = SealCode.all
+    @branch = Branch.all
   end
 
   # GET /seal_codes/1
   # GET /seal_codes/1.json
   def show
+    @branch = Branch.all
   end
 
   # GET /seal_codes/new
@@ -19,6 +21,7 @@ class SealCodesController < ApplicationController
 
   # GET /seal_codes/1/edit
   def edit
+
   end
 
   # POST /seal_codes
@@ -65,6 +68,9 @@ class SealCodesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_seal_code
       @seal_code = SealCode.find(params[:id])
+      @branch = Branch.find(params[:id])
+
+
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

@@ -2,10 +2,10 @@
 
 %p
   %b From branch:
-  = @seal_code.from_branch
+  = @branch.find(@seal_code.from_branch).name if @seal_code.from_branch?
 %p
   %b To branch:
-  = @seal_code.to_branch
+  = @branch.find(@seal_code.to_branch).name if @seal_code.to_branch?
 %p
   %b Date:
   = @seal_code.date
