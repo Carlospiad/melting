@@ -1,5 +1,5 @@
 class GoldReportsController < ApplicationController
-  before_action :set_gold_report, only: [:show, :edit, :update, :destroy]
+  before_action :set_gold_report, only: [:show, :edit, :update, :destroy, :askapproval]
 
 
   # GET /gold_reports
@@ -20,6 +20,12 @@ class GoldReportsController < ApplicationController
 
   # GET /gold_reports/1/edit
   def edit
+  end
+
+  def preapproval
+    @gold_report = GoldReport.find(params[:id])
+    @gold_report.preapprove
+    return redirect_to gold_reports_path
   end
 
   # POST /gold_reports
