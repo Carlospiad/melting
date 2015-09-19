@@ -5,10 +5,7 @@
   = @gold_report.end_date
 %p
   %b Branch:
-  - if @gold_report.branch.nil?
-    = ""
-  - else
-    = @gold_report.branch.name
+  = @gold_report.branch.name if @gold_report.branch_id?
 %p
   %b Assistants:
   = @gold_report.assistants
