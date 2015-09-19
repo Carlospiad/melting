@@ -1,0 +1,16 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
+development:
+  <<: *default
+  database: melting_development
+test:
+  <<: *default
+  database: melting_test
+production:
+  <<: *default
+  database: melting_production
+  username: melting
+  password: <%= ENV['SEAGULL_DATABASE_PASSWORD'] %>
