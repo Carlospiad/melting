@@ -1,10 +1,11 @@
-%h1 Editing gold_report
+%h1 Editar Reporte de Oro
 
 = render 'form'
 
 
 = button_to "Send for Approval", {:action => "preapprove" }, {:class => "btn-default btn" }
-= button_to " Approve", {:action => "approve" }, {:class => "btn-default btn" }
+= button_to "Reject", {:action => "reject" }, {:class => "btn-default btn" }
+= button_to "Approve", {:action => "approve" }, {:class => "btn-default btn" }
 
 
 = link_to 'Show', @gold_report

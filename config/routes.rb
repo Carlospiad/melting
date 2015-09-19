@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     member do
       post 'preapprove'
       post 'approve'
+      post 'reject'
     end
   end
 

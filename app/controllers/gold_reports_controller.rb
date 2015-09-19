@@ -34,6 +34,12 @@ class GoldReportsController < ApplicationController
     return redirect_to gold_reports_path
   end
 
+  def reject
+    @gold_report = GoldReport.find(params[:id])
+    @gold_report.reject!
+    return redirect_to gold_reports_path
+  end
+
   # POST /gold_reports
   # POST /gold_reports.json
   def create

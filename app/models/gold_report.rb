@@ -14,6 +14,9 @@ class GoldReport < ActiveRecord::Base
     event :approve do
        transitions :from => :preapproved, :to => :approved
     end
+    event :reject do
+       transitions :from => :preapproved, :to => :draft
+    end
   end
-  
+
 end

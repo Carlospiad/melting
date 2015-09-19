@@ -88,6 +88,9 @@
   %b Comments:
   = @gold_report.comments
 
+= button_to "Send for Approval", {:action => "preapprove" }, {:class => "btn-default btn" }
+= button_to "Rechazar", {:action => "reject" }, {:class => "btn-default btn" }
+= button_to "Aprobar", {:action => "approve" }, {:class => "btn-default btn" }
 
 
 = link_to 'Edit', edit_gold_report_path(@gold_report)
