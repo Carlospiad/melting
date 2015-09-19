@@ -21,3 +21,30 @@
 
 en:
   hello: "Hello world"
+  activerecord:
+    attributes:
+      gold_report:
+        end_date: "Fecha"
+        branch: "Sucursal"
+        container_qty:
+        assistants: "Ayudantes"
+        pawned_capital: "Capital Empeñado"
+        bought_capital: "Capital Comprado"
+        export_real_weight:
+        pawns_listed_total_weight: "Peso de Empeños en listado"
+        pawns_10k_weight: "Peso(g) Empeños 10k"
+        pawns_14k_weight: "Peso(g) Empeños 14k"
+        pawns_18k_weight: "Peso(g) Empeños 18k"
+        pawns_with_diamonds_weight: "Peso(g) Empeños Brillantes"
+        pawns_saved_weight:
+        pawns_stone_weight:
+        pawns_other_weight:
+        bought_listed_total_weight: "Peso de Compras en listado"
+        bought_10k_weight: "Compras 10k"
+        bought_14k_weight: "Compras 14k"
+        bought_18k_weight: "Compras 18k"
+        bought_with_diamonds_weight: "Peso(g) Compras Brillantes"
+        bought_saved_weight:
+        bought_stone_weight:
+        bought_other_weight: "Compra - Peso Otros"
+        comments: "Comentarios"

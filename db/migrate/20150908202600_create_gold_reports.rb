@@ -23,7 +23,7 @@ class CreateGoldReports < ActiveRecord::Migration
       t.integer :bought_with_diamonds_weight
       t.integer :bought_saved_weight
       t.integer :bought_stone_weight
-      t.integer :bought_other_weigth
+      t.integer :bought_other_weight
       t.string :aasm_state
       t.text :comments
 
