@@ -22,7 +22,7 @@ class GoldReportsController < ApplicationController
   def edit
   end
 
-  def preapproval
+  def preapprove
     @gold_report = GoldReport.find(params[:id])
     @gold_report.preapprove!
     return redirect_to gold_reports_path

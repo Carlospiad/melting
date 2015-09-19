@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   resources :gold_reports do
     member do
-      post 'preapproval'
+      post 'preapprove'
       post 'approve'
     end
   end
