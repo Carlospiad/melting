@@ -10,6 +10,7 @@
       %th Bought capital
       %th Export real weight
       %th Container qty
+      %th State
       %th
       %th
       %th
@@ -24,6 +25,7 @@
         %td= gold_report.bought_capital
         %td= gold_report.export_real_weight
         %td= gold_report.container_qty
+        %td= gold_report.aasm_state
         %td= link_to 'Show', gold_report
         %td= link_to 'Edit', edit_gold_report_path(gold_report)
         %td= link_to 'Destroy', gold_report, :method => :delete, :data => { :confirm => 'Are you sure?' }
