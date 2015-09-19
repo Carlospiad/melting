@@ -1,7 +1,7 @@
 class GoldReportsController < ApplicationController
   before_action :set_gold_report, only: [:show, :edit, :update, :destroy]
 
-  
+
   # GET /gold_reports
   # GET /gold_reports.json
   def index

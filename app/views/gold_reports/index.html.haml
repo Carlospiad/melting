@@ -18,11 +18,7 @@
     - @gold_reports.each do |gold_report|
       %tr
         %td= gold_report.end_date
-        %td
-          - if gold_report.branch.nil?
-            = ""
-          - else
-            = gold_report.branch.name
+        %td= gold_report.branch.name if gold_report.branch_id?
         %td= gold_report.assistants
         %td= gold_report.pawned_capital
         %td= gold_report.bought_capital
