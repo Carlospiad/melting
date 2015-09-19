@@ -1,6 +1,7 @@
 class GoldReport < ActiveRecord::Base
   belongs_to :branch
   belongs_to :assistants
+  has_many :seal_codes
 
   include AASM
   aasm do
