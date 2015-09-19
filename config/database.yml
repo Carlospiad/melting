@@ -13,4 +13,4 @@ production:
   <<: *default
   database: melting_production
   username: melting
-  password: <%= ENV['SEAGULL_DATABASE_PASSWORD'] %>
+  password: <%= ENV['MELTING_DATABASE_PASSWORD'] %>
