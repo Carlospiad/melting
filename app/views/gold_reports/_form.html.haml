@@ -5,84 +5,100 @@
       %ul
         - @gold_report.errors.full_messages.each do |msg|
           %li= msg
-  .row
-    .form-group.col-md-4
-      = f.label :end_date
-      = f.date_select :end_date,{:class => "form-control"}
-    .form-group.col-md-3
-      = f.label :branch
-      - opts = options_from_collection_for_select(Branch.all.order(:code), :id, :namecode)
-      = f.select :branch_id, opts, {:include_blank => true}, class: 'form-control'
-    .form-group.col-md-2
-      = f.label :container_qty
-      = f.text_field :container_qty, class: 'form-control'
-  .form-group
-    = f.label :assistants
-    = f.text_field :assistants, class: 'form-control'
-  .row
-    .form-group.col-md-3
-      = f.label :pawned_capital
-      = f.text_field :pawned_capital, class: 'form-control'
-    .form-group.col-md-3
-      = f.label :bought_capital, "Capital Comprado"
-      = f.text_field :bought_capital, class: 'form-control'
-    .form-group.col-md-3
-      = f.label :export_real_weight, "Peso Exportado (g)"
-      = f.text_field :export_real_weight,class: 'form-control'
-  .row
-    .form-group.col-md-4
-      = f.label :pawns_listed_total_weight
-      = f.text_field :pawns_listed_total_weight, class: 'form-control'
-  .row
-    .form-group.col-md-3
-      = f.label :pawns_10k_weight
-      = f.text_field :pawns_10k_weight, class: 'form-control'
-    .form-group.col-md-3
-      = f.label :pawns_14k_weight
-      = f.text_field :pawns_14k_weight, class: 'form-control'
-    .form-group.col-md-3
-      = f.label :pawns_18k_weight
-      = f.text_field :pawns_18k_weight, class: 'form-control'
-    .form-group.col-md-3
-      = f.label :pawns_with_diamonds_weight
-      = f.text_field :pawns_with_diamonds_weight, class: 'form-control'
-  .row
-    .form-group.col-md-3
-      = f.label :pawns_saved_weight
-      = f.text_field :pawns_saved_weight, class: 'form-control'
-    .form-group.col-md-3
-      = f.label :pawns_stone_weight
-      = f.text_field :pawns_stone_weight, class: 'form-control'
-    .form-group.col-md-3
-      = f.label :pawns_other_weight
-      = f.text_field :pawns_other_weight, class: 'form-control'
-  .row
-    .form-group.col-md-4
-      = f.label :bought_listed_total_weight
-      = f.text_field :bought_listed_total_weight, class: 'form-control'
-  .row
-    .form-group.col-md-3
-      = f.label :bought_10k_weight
-      = f.text_field :bought_10k_weight, class: 'form-control'
-    .form-group.col-md-3
-      = f.label :bought_14k_weight
-      = f.text_field :bought_14k_weight, class: 'form-control'
-    .form-group.col-md-3
-      = f.label :bought_18k_weight
-      = f.text_field :bought_18k_weight, class: 'form-control'
-    .form-group.col-md-3
-      = f.label :bought_with_diamonds_weight
-      = f.text_field :bought_with_diamonds_weight, class: 'form-control'
-  .row
-    .form-group.col-md-3
-      = f.label :bought_saved_weight
-      = f.text_field :bought_saved_weight, class: 'form-control'
-    .form-group.col-md-3
-      = f.label :bought_stone_weight
-      = f.text_field :bought_stone_weight, class: 'form-control'
-    .form-group.col-md-3
-      = f.label :bought_other_weight
-      = f.text_field :bought_other_weight, class: 'form-control'
+  .panel.panel-default
+    .panel-heading
+      %h3 Información General
+    .panel-body
+      .row
+        .form-group.col-md-4
+          = f.label :end_date
+          = f.date_select :end_date,{:class => "form-control"}
+        .form-group.col-md-3
+          = f.label :branch
+          - opts = options_from_collection_for_select(Branch.all.order(:code), :id, :namecode)
+          = f.select :branch_id, opts, {:include_blank => true}, class: 'form-control'
+        .form-group.col-md-2
+          = f.label :container_qty
+          = f.text_field :container_qty, class: 'form-control'
+        .form-group.col-md-4
+          = f.label :assistants
+          = f.text_area :assistants, class: 'form-control'
+  .panel.panel-default
+    .panel-heading
+      %h3 Información de Listados
+    .panel-body
+      .row
+        .form-group.col-md-3
+          = f.label :pawned_capital
+          = f.text_field :pawned_capital, class: 'form-control'
+        .form-group.col-md-3
+          = f.label :bought_capital, "Capital Comprado"
+          = f.text_field :bought_capital, class: 'form-control'
+        .form-group.col-md-3
+          = f.label :export_real_weight, "Peso Exportado (g)"
+          = f.text_field :export_real_weight,class: 'form-control'
+  .panel.panel-default
+    .panel-heading
+      %h3 Información de Empeños
+    .panel-body
+      .row
+        .form-group.col-md-4
+          = f.label :pawns_listed_total_weight
+          = f.text_field :pawns_listed_total_weight, class: 'form-control'
+      .row
+        .form-group.col-md-3
+          = f.label :pawns_10k_weight
+          = f.text_field :pawns_10k_weight, class: 'form-control'
+        .form-group.col-md-3
+          = f.label :pawns_14k_weight
+          = f.text_field :pawns_14k_weight, class: 'form-control'
+        .form-group.col-md-3
+          = f.label :pawns_18k_weight
+          = f.text_field :pawns_18k_weight, class: 'form-control'
+        .form-group.col-md-3
+          = f.label :pawns_with_diamonds_weight
+          = f.text_field :pawns_with_diamonds_weight, class: 'form-control'
+      .row
+        .form-group.col-md-3
+          = f.label :pawns_saved_weight
+          = f.text_field :pawns_saved_weight, class: 'form-control'
+        .form-group.col-md-3
+          = f.label :pawns_stone_weight
+          = f.text_field :pawns_stone_weight, class: 'form-control'
+        .form-group.col-md-3
+          = f.label :pawns_other_weight
+          = f.text_field :pawns_other_weight, class: 'form-control'
+  .panel.panel-default
+    .panel-heading
+      %h3 Información de Compras
+    .panel-body
+      .row
+        .form-group.col-md-4
+          = f.label :bought_listed_total_weight
+          = f.text_field :bought_listed_total_weight, class: 'form-control'
+      .row
+        .form-group.col-md-3
+          = f.label :bought_10k_weight
+          = f.text_field :bought_10k_weight, class: 'form-control'
+        .form-group.col-md-3
+          = f.label :bought_14k_weight
+          = f.text_field :bought_14k_weight, class: 'form-control'
+        .form-group.col-md-3
+          = f.label :bought_18k_weight
+          = f.text_field :bought_18k_weight, class: 'form-control'
+        .form-group.col-md-3
+          = f.label :bought_with_diamonds_weight
+          = f.text_field :bought_with_diamonds_weight, class: 'form-control'
+      .row
+        .form-group.col-md-3
+          = f.label :bought_saved_weight
+          = f.text_field :bought_saved_weight, class: 'form-control'
+        .form-group.col-md-3
+          = f.label :bought_stone_weight
+          = f.text_field :bought_stone_weight, class: 'form-control'
+        .form-group.col-md-3
+          = f.label :bought_other_weight
+          = f.text_field :bought_other_weight, class: 'form-control'
   .form-group
     = f.label :comments
     = f.text_area :comments, class: 'form-control'
